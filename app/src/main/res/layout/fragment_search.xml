@@ -1,0 +1,93 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="search.searchFragment"
+    android:background="#313131">
+    <RelativeLayout
+        android:id="@+id/text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp">
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="What are you"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:fontFamily="@font/antic_didone"
+            android:layout_centerHorizontal="true"/>
+        <TextView
+            android:id="@+id/text2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/text1"
+            android:text="shopping for?"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="@font/antic_didone"
+            android:layout_centerHorizontal="true"/>
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        ><androidx.cardview.widget.CardView
+        android:id="@+id/women"
+        android:layout_width="match_parent"
+        android:layout_height="183dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        app:cardCornerRadius="20dp"
+        app:cardBackgroundColor="#3F3F3F">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:layout_width="wrap_content"
+            android:layout_height="143dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/women_watch" />
+    </androidx.cardview.widget.CardView>
+        <TextView
+            android:id="@+id/womens"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/women"
+            android:textColor="@color/white"
+            android:text="Women's"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/men"
+            android:layout_width="match_parent"
+            android:layout_height="183dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="#3F3F3F"
+            android:layout_below="@id/womens"
+            android:layout_marginTop="20dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:layout_width="wrap_content"
+                android:layout_height="143dp"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/men_watch" />
+        </androidx.cardview.widget.CardView>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/men"
+            android:textColor="@color/white"
+            android:text="Men's"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"/>
+
+    </RelativeLayout>
+
+
+
+</FrameLayout>
