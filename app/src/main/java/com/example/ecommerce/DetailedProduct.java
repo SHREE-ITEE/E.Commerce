@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.card.MaterialCardView;
 import com.google.firebase.database.DataSnapshot;
@@ -39,6 +40,7 @@ public class DetailedProduct extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detailed_product);
         String productId = getIntent().getStringExtra("item_id");
+
         productImage=findViewById(R.id.productImage);
         productName=findViewById(R.id.productName);
         productPrice=findViewById(R.id.productPrice);

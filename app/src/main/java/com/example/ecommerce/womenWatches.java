@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 
 import android.os.Bundle;
 import android.widget.GridView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -23,7 +24,7 @@ public class womenWatches extends AppCompatActivity {
 GridView womenGridView;
 ArrayList<womenGrid> womenGrids;
 WomenGridAdapter womenGridAdapter;
-final private DatabaseReference databaseReference= FirebaseDatabase.getInstance().getReference("watches").child("women");
+ DatabaseReference databaseReference;
 
 
     @Override
@@ -32,26 +33,37 @@ final private DatabaseReference databaseReference= FirebaseDatabase.getInstance(
         setContentView(R.layout.activity_women_watches);
         womenGridView=findViewById(R.id.womenGridView);
         womenGrids=new ArrayList<>();
-        womenGridAdapter= new WomenGridAdapter(womenGrids,this);
-        womenGridView.setAdapter(womenGridAdapter);
+
+        getData();
+
+
+    }
+    private void getData()
+    {
+        databaseReference=FirebaseDatabase.getInstance().getReference("watches").child("women");
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                womenGrids.clear();
                 for(DataSnapshot dataSnapshot:snapshot.getChildren())
                 {
-                  womenGrid womengrid;
-                    womengrid = dataSnapshot.getValue(womenGrid.class);
+                    womenGrid womengrid = dataSnapshot.getValue(womenGrid.class);
+                    Toast.makeText(getApplicationContext(), ""+womengrid.getImage(), Toast.LENGTH_SHORT).show();
                     womenGrids.add(womengrid);
+                   // womenGrid womengrid=dataSnapshot.getValue(womenGrid.class);
+                    //Toast.makeText(getApplicationContext(),womengrid.getId(),Toast.LENGTH_SHORT).show();
                 }
+                womenGridAdapter= new WomenGridAdapter(womenGrids,womenWatches.this);
+                womenGridView.setAdapter(womenGridAdapter);
                 womenGridAdapter.notifyDataSetChanged();
 
             }
+
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
             }
         });
-
     }
 }
