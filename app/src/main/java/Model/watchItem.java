@@ -1,21 +1,15 @@
 package Model;
 
-public class womenGrid {
-    private String userId;
-    String image,price,name,description;
-    womenGrid()
-    {
+public class watchItem {
+    String image,name,price,description;
 
+    public watchItem() {
     }
 
-    public womenGrid(String userId) {
-        this.userId = userId;
-    }
-
-    public womenGrid(String image, String price, String name, String description) {
+    public watchItem(String image,String name,String price,String description) {
         this.image = image;
-        this.price=price;
         this.name=name;
+        this.price=price;
         this.description=description;
     }
 
@@ -27,14 +21,6 @@ public class womenGrid {
         this.image = image;
     }
 
-    public String getPrice() {
-        return price;
-    }
-
-    public void setPrice(String price) {
-        this.price = price;
-    }
-
     public String getName() {
         return name;
     }
@@ -43,15 +29,19 @@ public class womenGrid {
         this.name = name;
     }
 
+    public String getPrice() {
+        return price;
+    }
+
+    public void setPrice(String price) {
+        this.price = price;
+    }
+
     public String getDescription() {
         return description;
     }
 
     public void setDescription(String description) {
         this.description = description;
-    }
-
-    public String getId() {
-        return userId;
     }
 }

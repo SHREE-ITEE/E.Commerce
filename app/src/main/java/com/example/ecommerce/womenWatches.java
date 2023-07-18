@@ -39,8 +39,9 @@ final private DatabaseReference databaseReference= FirebaseDatabase.getInstance(
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot dataSnapshot:snapshot.getChildren())
                 {
-                  womenGrid womengrid=dataSnapshot.getValue(Model.womenGrid.class);
-                  womenGrids.add(womengrid);
+                  womenGrid womengrid;
+                    womengrid = dataSnapshot.getValue(womenGrid.class);
+                    womenGrids.add(womengrid);
                 }
                 womenGridAdapter.notifyDataSetChanged();
 

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selectedFragment = new homeFragment();
+                selectedFragment=new homeFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragmentContainer, selectedFragment).commit();
                 home.setImageResource(R.drawable.home);
                 wishlist.setImageResource(R.drawable.outline_favorite);

@@ -4,32 +4,37 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#313131">
-
     <androidx.cardview.widget.CardView
-        android:layout_marginTop="7dp"
-        android:id="@+id/womenWimages"
+        android:layout_marginTop="12dp"
+        android:id="@+id/bestWimages"
         android:layout_width="160dp"
-        android:layout_height="222dp"
+        android:layout_height="173dp"
         app:cardCornerRadius="10dp"
         android:backgroundTint="#3F3F3F"
         android:layout_marginStart="20dp">
         <ImageView
             android:backgroundTint="#3F3F3F"
-            android:id="@+id/wimage"
+            android:id="@+id/bimage"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
-            android:layout_marginTop="16dp"/>
+            android:layout_height="153dp"
+            android:layout_marginTop="10dp"
+            android:background="#3F3F3F" />
     </androidx.cardview.widget.CardView>
     <TextView
-        android:id="@+id/wprice"
+        android:id="@+id/bprice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/womenWimages"
+        android:layout_below="@+id/bestWimages"
         android:text="Price"
         android:textColor="@color/white"
         android:textSize="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="05dp"
-        android:fontFamily="@font/alata"
-        android:layout_marginStart="20dp"/>
+        android:fontFamily="@font/alata"/>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="7dp"
+        android:layout_below="@+id/bprice"
+        android:backgroundTint="#313131" />
 
 </RelativeLayout>

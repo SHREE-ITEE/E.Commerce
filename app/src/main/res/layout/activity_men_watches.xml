@@ -1,22 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".menWatches">
+    tools:context=".menWatches"
+    android:background="#313131">
 
 
-    <TextView
-        android:layout_width="wrap_content"
+    <RelativeLayout
+        android:id="@+id/text"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MEN"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginTop="30dp">
+
+        <TextView
+            android:id="@+id/explore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:fontFamily="@font/alata"
+            android:text="EXPLORE"
+            android:textColor="#B9BFBABA"
+            android:textSize="20dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/explore"
+            android:text="TOP BRAND WATCHES"
+            android:textSize="20dp"
+            android:layout_marginStart="20dp"
+            android:textStyle="bold"
+            android:textColor="#CDFFFFFF"
+            android:fontFamily="@font/alata"/>
+    </RelativeLayout>
+    <GridView
+        android:id="@+id/menGridView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/text"
+        android:layout_marginTop="15dp"
+        android:numColumns="2"
+        android:layout_marginEnd="10dp"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>
